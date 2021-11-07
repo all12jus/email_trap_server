@@ -1,0 +1,11 @@
+{
+  "name": "email_trap_server",
+  "version": "1.0.0",
+  "dependencies": {
+    "mailparser": "^3.4.0",
+    "nodemailer": "^6.7.0",
+    "smtp-server": "^3.9.0",
+    "sys": "^0.0.1",
+    "tcp": "^1.0.0"
+  }
+}
