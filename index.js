@@ -2,6 +2,9 @@ const net = require('net');
 const server = net.createServer();
 const port = process.env.PORT || 9000;
 
+let username = "test1";
+let password = "password1";
+
 // When a client requests a connection with the server, the server creates a new
 // socket dedicated to that client.
 server.on('connection', function(socket) {
@@ -39,7 +42,7 @@ server.on('connection', function(socket) {
                 socket.write('250 ok\r\n');
             } else if (data_string.substring(0, 10) === 'AUTH LOGIN') {
                 // socket.write('250 ok\r\n');
-                socket.write('334 VXNlcm5hbWU6\r\n'); // comes back with username..
+                socket.write('334 VXNlcm5hbWU6\r\n'); // comes back with username.. base64
                 socket.write('334 UGFzc3dvcmQ6\r\n'); // comes back with password...
                 socket.write('235 2.7.0 Authentication successful\r\n'); // then sends a message.
             } else if (data_string.substring(0, 10) === 'MAIL FROM:') {

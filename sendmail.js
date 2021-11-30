@@ -5,8 +5,8 @@ const transporter = nodemailer.createTransport({
     port: 9000,
     secure: false,
     auth: {
-        user: 'abc',
-        pass: 'def'
+        user: 'test1',
+        pass: 'password1'
     },
     tls: {
         rejectUnauthorized: false
@@ -17,6 +17,7 @@ async function f() {
     const result = await transporter.sendMail({
         from: 'from_address@example.com',
         to: ['all12jus@gmail.com', 'to_address2@example.com'],
+        // bcc: ['all12jus@gmail.com', 'to_address2@example.com'],
         subject: 'Test Email Subject',
         text: 'Example Plain Text Message Body. Example Plain Text Message Body. Example Plain Text Message Body. Example Plain Text Message Body. Example Plain Text Message Body.',
         html: '<p>Example Plain Text Message Body.</p>'
